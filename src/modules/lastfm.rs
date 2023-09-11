@@ -9,7 +9,7 @@ pub(crate) async fn spam_single_track() {
 
     let client = reqwest::Client::new();
     let res = client
-        .get(&config.api_url)
+        .post(&config.api_url)
         .header("content-type", "application/x-www-form-urlencoded")
         .header("cookie", format!("PHPSESSID={}", &config.cookie))
         .body(format!(
